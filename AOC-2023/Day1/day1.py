@@ -8,13 +8,10 @@ def sum_first_last_digits(filename):
     total_sum = 0
 
     for line in lines:
-        # Find the first digit in the line
         first_digit = next((char for char in line if char.isdigit()), None)
 
-        # Find the last digit in the line
         last_digit = next((char for char in reversed(line) if char.isdigit()), None)
 
-        # Check if both first and last digits are found
         if first_digit is not None and last_digit is not None:
             value = int(first_digit + last_digit)
             total_sum += value
