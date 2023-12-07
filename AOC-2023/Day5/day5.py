@@ -4,7 +4,7 @@ seeds, *mappings = open('input.txt').read().split('\n\n')
 seeds = map(int, seeds.split()[1:])
 
 
-def plant(start, mapping):
+def lookup(start, mapping):
     for m in mapping.split('\n')[1:]:
         dst, src, len = map(int, m.split())
         delta = start - src
@@ -14,4 +14,4 @@ def plant(start, mapping):
         return start
 
 
-print(f"Part 1: {min(reduce(plant, mappings, int(s)) for s in seeds)}")
+print(f"Part 1: {min(reduce(lookup, mappings, int(s)) for s in seeds)}")
